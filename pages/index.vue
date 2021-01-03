@@ -1,80 +1,65 @@
-<template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        hostile-colors
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  .rg-palette-generator.flex.flex-col.p-px.space-y-px
+    .rg-palette.flex-grow.flex.flex-row(v-if="palette")
+      .rg-palette-sample.flex-1.flex.flex-col.justify-center.p-16
+        .m-y-auto.p-4.space-y-8(:style="{ backgroundColor: palette.background, color: palette.primary }")
+          span.text-lg Palette sample
+          p.normal-case Kaboodle edmodo loopt udemy dogster, kiko cuil. Chumby ngmoco zappos chumby nuvvo, zooomr palantir. Chegg zoho loopt kno quora jabber eskobo tivo, zimbra orkut oooooc waze jajah zinch. Bebo edmodo yammer insala vimeo, voki eduvant twones. Mzinga grockit odeo woopra trulia lanyrd, diigo gsnap oooooc chartly. Groupon lala blekko shopify, orkut octopart.
+          .flex.flex-row.justify-end
+            .p-2(:style="{ color: palette.primary, backgroundColor: palette.accent }") Test
+      .rg-palette-colors.flex-1.flex.flex-col
+        Swatch.flex-grow(
+          :style="{ 'color': palette.background }"
+          :color="palette.primary"
+        )
+        .rg-palette-colors-secondary.flex-grow.flex.flex-col
+          Swatch.flex-grow(
+            v-for="(color, i) in [palette.accent, palette.background]"
+            :key="color"
+            :style="{ color: palette.primary }"
+            v-bind="{ color }"
+          )
+    .rg-palette-tools.flex.flex-row.justify-between.bg-white.p-4(:style="{ color: palette.dark, backgroundColor: palette.light }")
+      button(
+        :style="{ opacity: canUndo ? 1 : 0.25 }"
+        :disabled="!canUndo"
+        @click="canUndo ? undo() : null"
+      ) Undo
+      button(@click="generate") Generate
+      button(
+        :style="{ opacity: canRedo ? 1 : 0.25 }"
+        :disabled="!canRedo"
+        @click="canRedo ? redo() : null"
+      ) Redo
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 
-export default Vue.extend({})
+export default Vue.extend({
+  computed: {
+    ...mapGetters('palettes', ['canRedo', 'canUndo']),
+    ...mapGetters('palettes', { palette: 'current' })
+  },
+  asyncData({ store: { dispatch }}) { dispatch('init') },
+  mounted() { window.addEventListener('keyup', this.onWindowKeyUp) },
+  beforeDestroy() { window.removeEventListener('keyup', this.onWindowKeyUp) },
+  methods: {
+    ...mapActions('palettes', ['generate', 'redo', 'undo']),
+    onWindowKeyUp({ key }: KeyboardEvent) {
+      switch (key) {
+        case ' ':
+          this.generate()
+          break
+        case 'ArrowLeft':
+          if (this.canUndo) this.undo()
+          break
+        case 'ArrowRight':
+          if (this.canRedo) this.redo()
+          else this.generate()
+      }
+    }
+  }
+})
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

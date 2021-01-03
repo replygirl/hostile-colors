@@ -17,10 +17,12 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    'destyle.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    { src: '~/plugins/persisted-state.client.ts' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
