@@ -144,8 +144,9 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     ['@nuxtjs/google-fonts', {
+      families: { 'IBM+Plex+Mono': [300] },
       display: 'swap',
-      'IBM+Plex+Mono': [300]
+      download: true
     }]
   ],
 
