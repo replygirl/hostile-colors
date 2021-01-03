@@ -22,7 +22,7 @@ export const getters: GetterTree<PalettesState, RootState> = {
 
 export const mutations: MutationTree<PalettesState> = {
   addPalette(s, x) {
-    s.v = [x, ...s.v.slice(s.i)]
+    s.v = [x, ...s.v.slice(s.i)].slice(0, 50)
     s.i = 0
   },
   clearPalettes(s) {
