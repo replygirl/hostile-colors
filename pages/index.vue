@@ -1,7 +1,7 @@
 <template lang="pug">
   .rg-palette-generator.flex.flex-col.p-px.space-y-px
     .rg-palette.flex-grow.flex.flex-col.md--flex-row(v-if="palette")
-      .rg-palette-sample.flex-1.flex.flex-col.justify-center.p-16
+      .rg-palette-sample.flex-1.flex.flex-col.justify-center.p-4.sm--p-16.md--p-24.lg--p-32.xl--p-40.2xl--p-48.3xl--p-56.4xl--p-64.5xl--p-72.6xl--p-80
         .m-y-auto.p-4.space-y-8(:style="{ backgroundColor: palette.background, color: palette.primary }")
           span.text-lg Palette sample
           p.normal-case Kaboodle edmodo loopt udemy dogster, kiko cuil. Chumby ngmoco zappos chumby nuvvo, zooomr palantir. Chegg zoho loopt kno quora jabber eskobo tivo, zimbra orkut oooooc waze jajah zinch. Bebo edmodo yammer insala vimeo, voki eduvant twones. Mzinga grockit odeo woopra trulia lanyrd, diigo gsnap oooooc chartly. Groupon lala blekko shopify, orkut octopart.
