@@ -41,7 +41,7 @@ const createPalette = (): any => {
     ? {
       ...p,
       primary: p.base,
-      accent: p.color,
+      accent: (p as any).color,
       background: p.hues[0],
       dark: tinycolor(p.hues[1]).desaturate(50).darken(20).toHexString(),
       light: tinycolor(p.hues[2]).desaturate(50).lighten(20).toHexString(),
