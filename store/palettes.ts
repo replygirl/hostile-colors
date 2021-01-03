@@ -33,7 +33,7 @@ const r = (a: any, b: any) =>
   tinycolor.isReadable(a, b, { level: 'AA', size: 'large' })
 
 const isHostile = ({ base: a, color: b, contrast, hues: [c] }: any) =>
-  (contrast < 1.001) && ![[a, b], [b, c], [c, a]].some(([x, y]) => r(x, y))
+  (contrast < 1.01) && ![[a, b], [b, c], [c, a]].some(([x, y]) => r(x, y))
 
 const createPalette = (): any => {
   const p = hello(tinycolor.random().toHexString(), { contrast: 0 })
