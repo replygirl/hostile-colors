@@ -7,12 +7,12 @@
           p.normal-case Kaboodle edmodo loopt udemy dogster, kiko cuil. Chumby ngmoco zappos chumby nuvvo, zooomr palantir. Chegg zoho loopt kno quora jabber eskobo tivo, zimbra orkut oooooc waze jajah zinch. Bebo edmodo yammer insala vimeo, voki eduvant twones. Mzinga grockit odeo woopra trulia lanyrd, diigo gsnap oooooc chartly. Groupon lala blekko shopify, orkut octopart.
           .flex.flex-row.justify-end
             .p-2(:style="{ color: palette.primary, backgroundColor: palette.accent }") Test
-      .rg-palette-colors.flex-1.flex.flex-row.md--flex-col.space-y-px
+      .rg-palette-colors.flex-1.flex.flex-row.md--flex-col.space-x-px.md--space-x-0.md--space-y-px
         Swatch.flex-grow(
           :style="{ 'color': palette.background }"
           :color="palette.primary"
         )
-        .rg-palette-colors-secondary.flex-grow.flex.flex-row.md--flex-col.space-y-px
+        .rg-palette-colors-secondary.flex-grow.flex.flex-row.md--flex-col.space-x-px.md--space-x-0.md--space-y-px
           Swatch.flex-grow(
             v-for="(color, i) in [palette.accent, palette.background]"
             :key="color"
