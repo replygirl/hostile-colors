@@ -143,6 +143,10 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    ['@nuxtjs/google-fonts', {
+      display: 'swap',
+      'IBM+Plex+Mono': [300]
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
