@@ -25,6 +25,10 @@ export const mutations: MutationTree<PalettesState> = {
     s.v = [x, ...s.v.slice(s.i)]
     s.i = 0
   },
+  clearPalettes(s) {
+    s.v = []
+    s.i = 0
+  },
   redo(s) { s.i = Math.max(s.i - 1, 0) },
   undo(s) { s.i = Math.min(s.i + 1, s.v.length - 1) }
 }
@@ -49,6 +53,7 @@ const createPalette = (): any => {
 }
 
 export const actions: ActionTree<PalettesState, RootState> = {
+  clear({ commit }) { commit('clearPalettes') },
   generate({ commit }) {
     const p = createPalette()
     commit('addPalette', p)

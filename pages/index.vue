@@ -50,7 +50,8 @@ export default Vue.extend({
   },
   beforeDestroy() { window.removeEventListener('keyup', this.onWindowKeyUp) },
   methods: {
-    ...mapActions('palettes', ['generate', 'init', 'redo', 'undo']),
+    ...mapActions(['init']),
+    ...mapActions('palettes', ['generate', 'redo', 'undo']),
     onWindowKeyUp({ key }: KeyboardEvent) {
       switch (key) {
         case ' ':

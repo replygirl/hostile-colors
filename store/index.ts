@@ -1,9 +1,16 @@
 import { ActionTree } from 'vuex'
 
+const CURRENT_VERSION = '2'
+
 export const state = () => ({})
 
 export type RootState = ReturnType<typeof state>
 
 export const actions: ActionTree<RootState, RootState> = {
-  init({ dispatch }) { dispatch('palettes/init') }
+  clear({ dispatch }) { dispatch('palettes/clear') },
+  init({ dispatch }) {
+    if (localStorage?.getItem('v') !== CURRENT_VERSION) dispatch('clear')
+
+    dispatch('palettes/init')
+  }
 }
