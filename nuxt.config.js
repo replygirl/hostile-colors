@@ -130,7 +130,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/persisted-state.client.ts' }
+    '~/plugins/heap.client.ts',
+    '~/plugins/persisted-state.client.ts',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -157,5 +158,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+
+  publicRuntimeConfig: {
+    heapAppId: process.env.HEAP_APP_ID
   }
 }

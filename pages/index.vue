@@ -43,7 +43,10 @@ export default Vue.extend({
     ...mapGetters('palettes', { palette: 'current' })
   },
   asyncData({ store: { dispatch }}) { dispatch('init') },
-  mounted() { window.addEventListener('keyup', this.onWindowKeyUp) },
+  mounted() {
+    window.addEventListener('keyup', this.onWindowKeyUp)
+    this.$useHeap(this.$config.heapAppId)
+  },
   beforeDestroy() { window.removeEventListener('keyup', this.onWindowKeyUp) },
   methods: {
     ...mapActions('palettes', ['generate', 'redo', 'undo']),
