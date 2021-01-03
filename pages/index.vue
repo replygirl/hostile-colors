@@ -24,13 +24,13 @@
         :style="{ opacity: canUndo ? 1 : 0.25 }"
         :disabled="!canUndo"
         @click="canUndo ? undo() : null"
-      ) Undo{{ $ua.isFromPc ? ' (<-)' : '' }}
+      ) Undo{{ $ua.isFromPc() ? ' (<-)' : '' }}
       button(@click="generate") Generate{{ $ua.isFromPc() ? ' (space)' : '' }}
       button(
         :style="{ opacity: canRedo ? 1 : 0.25 }"
         :disabled="!canRedo"
         @click="canRedo ? redo() : null"
-      ) Redo{{ $ua.isFromPc ? ' (->)' : '' }}
+      ) Redo{{ $ua.isFromPc() ? ' (->)' : '' }}
 </template>
 
 <script lang="ts">
