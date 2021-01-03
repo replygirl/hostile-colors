@@ -143,6 +143,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://google-fonts.nuxtjs.org
     ['@nuxtjs/google-fonts', {
       families: { 'IBM+Plex+Mono': [300] },
       display: 'swap',
@@ -156,6 +157,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://github.com/fukuiretu/nuxt-user-agent
+    'nuxt-user-agent'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

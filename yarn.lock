@@ -6601,6 +6601,13 @@ nuxt-edge@latest:
     "@nuxt/vue-renderer-edge" "2.15.0-26825808.8edafbeb"
     "@nuxt/webpack-edge" "2.15.0-26825808.8edafbeb"
 
+nuxt-user-agent@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/nuxt-user-agent/-/nuxt-user-agent-1.2.2.tgz#696462fcbdbc32d5be2bc63976afd9eef6e9f6b7"
+  integrity sha512-Z9d+r1/PzJAvrr4rX70IWvRyI3qw3RukAGrRZPZ9WeByuCWmVKiW8G1AhdkUOyrDrVoBUC59iLqIVkop/NjSuQ==
+  dependencies:
+    woothee "^1.8.1"
+
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -10005,6 +10012,11 @@ with@^7.0.0:
     "@babel/types" "^7.9.6"
     assert-never "^1.2.1"
     babel-walk "3.0.0-canary-5"
+
+woothee@^1.8.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/woothee/-/woothee-1.11.1.tgz#ac0a831345d1ca068a27b56f0f298b844769531e"
+  integrity sha512-KdArM3MsNa5tlSBSL29w9ouy9MXZoFPeUdPVnL4QZH3iyV8HsqnwbWw2YLiXEx2wAh0bM55dnl0+qDE6KHBlhQ==
 
 workbox-cdn@^5.1.4:
   version "5.1.4"
