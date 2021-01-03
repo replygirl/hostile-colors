@@ -1,13 +1,13 @@
 <template lang="pug">
   .rg-palette-generator.flex.flex-col.p-px.space-y-px
     .rg-palette.flex-grow.flex.flex-col.md--flex-row(v-if="palette")
-      .rg-palette-sample.flex-grow.flex.flex-col.justify-center.p-16
+      .rg-palette-sample.flex-1.flex.flex-col.justify-center.p-16
         .m-y-auto.p-4.space-y-8(:style="{ backgroundColor: palette.background, color: palette.primary }")
           span.text-lg Palette sample
           p.normal-case Kaboodle edmodo loopt udemy dogster, kiko cuil. Chumby ngmoco zappos chumby nuvvo, zooomr palantir. Chegg zoho loopt kno quora jabber eskobo tivo, zimbra orkut oooooc waze jajah zinch. Bebo edmodo yammer insala vimeo, voki eduvant twones. Mzinga grockit odeo woopra trulia lanyrd, diigo gsnap oooooc chartly. Groupon lala blekko shopify, orkut octopart.
           .flex.flex-row.justify-end
             .p-2(:style="{ color: palette.primary, backgroundColor: palette.accent }") Test
-      .rg-palette-colors.flex-grow.flex.flex-row.md--flex-col.what
+      .rg-palette-colors.flex-1.flex.flex-row.md--flex-col.what
         Swatch.flex-grow(
           :style="{ 'color': palette.background }"
           :color="palette.primary"
