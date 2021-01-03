@@ -49,7 +49,11 @@ const createPalette = (): any => {
 }
 
 export const actions: ActionTree<PalettesState, RootState> = {
-  generate({ commit }) { commit('addPalette', createPalette()) },
+  generate({ commit }) {
+    const p = createPalette()
+    commit('addPalette', p)
+    window.heap.track('Generate', p)
+  },
   init({ dispatch, state: { v: [x] } }) { if (!x) dispatch('generate') },
   redo({ commit }) { commit('redo') },
   undo({ commit }) { commit('undo') }
