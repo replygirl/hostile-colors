@@ -25,7 +25,7 @@
         :disabled="!canUndo"
         @click="canUndo ? undo() : null"
       ) Undo{{ $ua.isFromPc ? ' (<-)' : '' }}
-      button(@click="generate") Generate{{ $ua.isFromPc ? ' (space)' : '' }}
+      button(@click="generate") Generate{{ $ua.isFromPc() ? ' (space)' : '' }}
       button(
         :style="{ opacity: canRedo ? 1 : 0.25 }"
         :disabled="!canRedo"
