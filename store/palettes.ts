@@ -43,8 +43,8 @@ const createPalette = (): any => {
       primary: p.base,
       accent: p.color,
       background: p.hues[0],
-      dark: tinycolor(p.hues[1]).desaturate(50).darken(25).toHexString(),
-      light: tinycolor(p.hues[2]).desaturate(50).lighten(30).toHexString(),
+      dark: tinycolor(p.hues[1]).desaturate(50).darken(20).toHexString(),
+      light: tinycolor(p.hues[2]).desaturate(50).lighten(20).toHexString(),
     } : createPalette()
 }
 
