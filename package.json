@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate"
+    "build": "nuxt-ts generate",
+    "start": "nuxt-ts start"
   },
   "dependencies": {
     "@nuxt/content": "^1.9.0",
